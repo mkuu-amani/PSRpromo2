@@ -34,9 +34,6 @@
 <meta name="twitter:image" content="https://mkuu-amani.github.io/PSRPromo1/x-card.jpeg">
 <meta name="twitter:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
 
-<!-- PRELOAD MAIN IMAGE -->
-<link rel="preload" as="image" href="promo2.jpeg">
-
 <style>
     * {
         box-sizing: border-box;
@@ -76,7 +73,7 @@
         background: #000;
     }
 
-    /* BACKGROUND VIDEO */
+    /* FULL-SCREEN LOOPING VIDEO */
     .background-video {
         position: absolute;
         inset: 0;
@@ -89,37 +86,21 @@
         animation: videoDrift 24s ease-in-out infinite alternate;
     }
 
-    /* DARKEN VIDEO SO FOREGROUND IMAGE STANDS OUT */
+    /* ATMOSPHERIC DARKENING */
     .video-overlay {
         position: absolute;
         inset: 0;
         background:
             linear-gradient(
                 180deg,
-                rgba(0, 0, 0, 0.20) 0%,
-                rgba(0, 0, 0, 0.08) 35%,
-                rgba(0, 0, 0, 0.42) 100%
+                rgba(0, 0, 0, 0.16) 0%,
+                rgba(0, 0, 0, 0.04) 35%,
+                rgba(0, 0, 0, 0.40) 100%
             );
         pointer-events: none;
     }
 
-    /* FOREGROUND PHOTOGRAPH */
-    .promo-image {
-        position: absolute;
-        inset: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center center;
-        transform-origin: center 42%;
-        animation: kenburns 28s ease-in-out infinite alternate;
-        -webkit-user-drag: none;
-        user-select: none;
-        pointer-events: none;
-    }
-
-    /* GOLDEN PSR GLOW */
+    /* GOLDEN GLOW */
     .sun-glow {
         position: absolute;
         inset: 0;
@@ -135,7 +116,7 @@
         animation: pulse 6s ease-in-out infinite;
     }
 
-    /* ATMOSPHERIC HEAT */
+    /* HEAT / ATMOSPHERE */
     .heat {
         position: absolute;
         inset: 0;
@@ -191,18 +172,7 @@
         white-space: nowrap;
     }
 
-    /* FOREGROUND PHOTO MOVEMENT */
-    @keyframes kenburns {
-        from {
-            transform: scale(1) translate3d(0, 8px, 0);
-        }
-
-        to {
-            transform: scale(1.08) translate3d(0, -12px, 0);
-        }
-    }
-
-    /* BACKGROUND VIDEO MOVEMENT */
+    /* SUBTLE VIDEO MOVEMENT */
     @keyframes videoDrift {
         from {
             transform: scale(1.03) translate3d(-0.5%, 0, 0);
@@ -213,7 +183,7 @@
         }
     }
 
-    /* GOLDEN GLOW PULSE */
+    /* GLOW PULSE */
     @keyframes pulse {
         0%,
         100% {
@@ -259,7 +229,6 @@
     /* REDUCED MOTION */
     @media (prefers-reduced-motion: reduce) {
         .background-video,
-        .promo-image,
         .sun-glow,
         .heat,
         .ember {
@@ -274,6 +243,7 @@
 <body>
 
 ```
+<!-- EVERYTHING IS CLICKABLE -->
 <a
     class="promo-link"
     href="https://www.prodigalsunradio.com/"
@@ -297,15 +267,8 @@
             <source src="background.mp4" type="video/mp4">
         </video>
 
-        <!-- VIDEO DARKENING -->
+        <!-- VIDEO OVERLAY -->
         <div class="video-overlay"></div>
-
-        <!-- MAIN FOREGROUND PHOTO -->
-        <img
-            class="promo-image"
-            src="promo2.jpeg"
-            alt="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
-        >
 
         <!-- ATMOSPHERIC EFFECTS -->
         <div class="sun-glow"></div>
