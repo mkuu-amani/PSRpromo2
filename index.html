@@ -3,39 +3,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Where The Mix Never Sleeps!! Listen live on Prodigal Sun Radio.">
 
 ```
-<link rel="canonical" href="https://mkuu-amani.github.io/PSRPromo1/">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#000000">
+
+<meta
+    name="description"
+    content="Where The Mix Never Sleeps!! Listen live on Prodigal Sun Radio."
+>
+
+<link
+    rel="canonical"
+    href="https://mkuu-amani.github.io/PSRPromo1/"
+>
 
 <title>Prodigal Sun Radio — Where The Mix Never Sleeps!!</title>
 
+
 <!-- OPEN GRAPH / FACEBOOK -->
+
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Prodigal Sun Radio">
-<meta property="og:locale" content="en_GB">
-<meta property="og:url" content="https://mkuu-amani.github.io/PSRPromo1/">
-<meta property="og:title" content="Prodigal Sun Radio">
-<meta property="og:description" content="Where The Mix Never Sleeps!!">
-<meta property="og:image" content="https://mkuu-amani.github.io/PSRPromo1/facebook-card.jpeg">
-<meta property="og:image:secure_url" content="https://mkuu-amani.github.io/PSRPromo1/facebook-card.jpeg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+<meta
+    property="og:site_name"
+    content="Prodigal Sun Radio"
+>
+
+<meta
+    property="og:locale"
+    content="en_GB"
+>
+
+<meta
+    property="og:url"
+    content="https://mkuu-amani.github.io/PSRPromo1/"
+>
+
+<meta
+    property="og:title"
+    content="Prodigal Sun Radio"
+>
+
+<meta
+    property="og:description"
+    content="Where The Mix Never Sleeps!!"
+>
+
+<meta
+    property="og:image"
+    content="https://mkuu-amani.github.io/PSRPromo1/facebook-card.jpeg"
+>
+
+<meta
+    property="og:image:secure_url"
+    content="https://mkuu-amani.github.io/PSRPromo1/facebook-card.jpeg"
+>
+
+<meta
+    property="og:image:type"
+    content="image/jpeg"
+>
+
+<meta
+    property="og:image:width"
+    content="1200"
+>
+
+<meta
+    property="og:image:height"
+    content="630"
+>
+
+<meta
+    property="og:image:alt"
+    content="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
+>
+
 
 <!-- X / TWITTER -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://mkuu-amani.github.io/PSRPromo1/">
-<meta name="twitter:title" content="Prodigal Sun Radio">
-<meta name="twitter:description" content="Where The Mix Never Sleeps!!">
-<meta name="twitter:image" content="https://mkuu-amani.github.io/PSRPromo1/x-card.jpeg">
-<meta name="twitter:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+<meta
+    name="twitter:card"
+    content="summary_large_image"
+>
+
+<meta
+    name="twitter:url"
+    content="https://mkuu-amani.github.io/PSRPromo1/"
+>
+
+<meta
+    name="twitter:title"
+    content="Prodigal Sun Radio"
+>
+
+<meta
+    name="twitter:description"
+    content="Where The Mix Never Sleeps!!"
+>
+
+<meta
+    name="twitter:image"
+    content="https://mkuu-amani.github.io/PSRPromo1/x-card.jpeg"
+>
+
+<meta
+    name="twitter:image:alt"
+    content="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
+>
+
 
 <style>
-    * {
+
+    /* =========================================================
+       BASE
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
         box-sizing: border-box;
     }
 
@@ -45,66 +136,150 @@
         padding: 0;
         width: 100%;
         height: 100%;
+        min-height: 100%;
         background: #000;
     }
 
     body {
         overflow: hidden;
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+
+        /* Helps prevent unwanted touch behaviour */
+        touch-action: manipulation;
     }
 
-    /* ENTIRE PAGE IS CLICKABLE */
+
+    /* =========================================================
+       FULL SCREEN CLICKABLE AREA
+    ========================================================= */
+
     .promo-link {
         position: fixed;
         inset: 0;
-        display: block;
+
         width: 100%;
         height: 100%;
+
+        width: 100vw;
+        height: 100vh;
+
+        /* Modern mobile viewport */
+        height: 100dvh;
+
+        display: block;
+
         cursor: pointer;
+
         text-decoration: none;
         color: inherit;
+
+        overflow: hidden;
     }
 
-    /* MAIN STAGE */
+
+    /* =========================================================
+       MAIN STAGE
+    ========================================================= */
+
     .stage {
         position: absolute;
         inset: 0;
+
+        width: 100%;
+        height: 100%;
+
         overflow: hidden;
+
         background: #000;
     }
 
-    /* FULL-SCREEN LOOPING VIDEO */
+
+    /* =========================================================
+       VIDEO
+       
+       The video is now the ONLY visual background.
+    ========================================================= */
+
     .background-video {
         position: absolute;
-        inset: 0;
+
+        top: 50%;
+        left: 50%;
+
         width: 100%;
         height: 100%;
+
+        /*
+         * cover makes the video fill the entire browser
+         * without black bars.
+         */
         object-fit: cover;
+
         object-position: center center;
+
+        /*
+         * Centre the video precisely inside the viewport.
+         */
+        transform: translate3d(-50%, -50%, 0);
+
+        display: block;
+
+        margin: 0;
+        padding: 0;
+
+        border: 0;
+
         pointer-events: none;
-        transform: scale(1.03);
-        animation: videoDrift 24s ease-in-out infinite alternate;
+
+        background: #000;
     }
 
-    /* ATMOSPHERIC DARKENING */
+
+    /* =========================================================
+       VIDEO OVERLAY
+       
+       Very subtle darkening to give the effects some depth.
+    ========================================================= */
+
     .video-overlay {
         position: absolute;
+
         inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        pointer-events: none;
+
         background:
             linear-gradient(
                 180deg,
-                rgba(0, 0, 0, 0.16) 0%,
-                rgba(0, 0, 0, 0.04) 35%,
-                rgba(0, 0, 0, 0.40) 100%
+                rgba(0, 0, 0, 0.12) 0%,
+                rgba(0, 0, 0, 0.02) 40%,
+                rgba(0, 0, 0, 0.38) 100%
             );
-        pointer-events: none;
     }
 
-    /* GOLDEN GLOW */
+
+    /* =========================================================
+       GOLDEN GLOW
+    ========================================================= */
+
     .sun-glow {
         position: absolute;
+
         inset: 0;
+
+        width: 100%;
+        height: 100%;
+
         pointer-events: none;
+
         background:
             radial-gradient(
                 circle at 50% 38%,
@@ -112,15 +287,28 @@
                 rgba(255, 140, 0, 0.08) 28%,
                 transparent 55%
             );
+
         mix-blend-mode: screen;
-        animation: pulse 6s ease-in-out infinite;
+
+        animation:
+            pulse 6s ease-in-out infinite;
     }
 
-    /* HEAT / ATMOSPHERE */
+
+    /* =========================================================
+       ATMOSPHERIC HEAT
+    ========================================================= */
+
     .heat {
         position: absolute;
+
         inset: 0;
+
+        width: 100%;
+        height: 100%;
+
         pointer-events: none;
+
         background:
             linear-gradient(
                 180deg,
@@ -128,63 +316,101 @@
                 transparent 35%,
                 rgba(0, 0, 0, 0.18)
             );
+
         mix-blend-mode: soft-light;
-        animation: shimmer 9s ease-in-out infinite;
+
+        animation:
+            shimmer 9s ease-in-out infinite;
     }
 
-    /* FLOATING EMBERS */
+
+    /* =========================================================
+       FLOATING EMBERS
+    ========================================================= */
+
     .embers {
         position: absolute;
+
         inset: 0;
+
+        width: 100%;
+        height: 100%;
+
         pointer-events: none;
+
         overflow: hidden;
     }
 
     .ember {
         position: absolute;
+
         bottom: -8px;
+
         width: 5px;
         height: 5px;
+
         border-radius: 50%;
+
         background: #ffd36a;
+
         box-shadow:
             0 0 8px 3px rgba(255, 180, 40, 0.65);
+
         opacity: 0;
-        animation: rise linear infinite;
+
+        animation:
+            rise linear infinite;
     }
 
-    /* LISTEN HINT */
+
+    /* =========================================================
+       LISTEN PROMPT
+    ========================================================= */
+
     .visit-hint {
         position: fixed;
+
         left: 50%;
-        bottom: max(1.25rem, env(safe-area-inset-bottom));
+
+        bottom:
+            max(
+                1.25rem,
+                env(safe-area-inset-bottom)
+            );
+
         transform: translateX(-50%);
-        padding: 0.55rem 1rem;
+
+        padding:
+            0.55rem 1rem;
+
         border-radius: 999px;
-        background: rgba(0, 0, 0, 0.65);
+
+        background:
+            rgba(0, 0, 0, 0.65);
+
         color: #f5d76e;
+
         font-size: 0.85rem;
+
         letter-spacing: 0.03em;
+
         pointer-events: none;
+
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
+
         z-index: 10;
+
         white-space: nowrap;
     }
 
-    /* SUBTLE VIDEO MOVEMENT */
-    @keyframes videoDrift {
-        from {
-            transform: scale(1.03) translate3d(-0.5%, 0, 0);
-        }
 
-        to {
-            transform: scale(1.08) translate3d(0.5%, -0.5%, 0);
-        }
-    }
+    /* =========================================================
+       GLOW PULSE
+    ========================================================= */
 
-    /* GLOW PULSE */
     @keyframes pulse {
+
         0%,
         100% {
             opacity: 0.55;
@@ -193,10 +419,16 @@
         50% {
             opacity: 1;
         }
+
     }
 
-    /* HEAT SHIMMER */
+
+    /* =========================================================
+       HEAT SHIMMER
+    ========================================================= */
+
     @keyframes shimmer {
+
         0%,
         100% {
             opacity: 0.45;
@@ -205,12 +437,21 @@
         50% {
             opacity: 0.85;
         }
+
     }
 
-    /* EMBER RISE */
+
+    /* =========================================================
+       EMBER RISE
+    ========================================================= */
+
     @keyframes rise {
+
         0% {
-            transform: translate3d(0, 0, 0) scale(0.6);
+            transform:
+                translate3d(0, 0, 0)
+                scale(0.6);
+
             opacity: 0;
         }
 
@@ -220,21 +461,68 @@
 
         100% {
             transform:
-                translate3d(var(--drift), -110vh, 0)
+                translate3d(
+                    var(--drift),
+                    -110vh,
+                    0
+                )
                 scale(0.2);
+
             opacity: 0;
         }
+
     }
 
-    /* REDUCED MOTION */
+
+    /* =========================================================
+       MOBILE PORTRAIT
+       
+       Still uses cover, but keeps the centre of the video.
+    ========================================================= */
+
+    @media (max-width: 600px) {
+
+        .background-video {
+            object-position: center center;
+        }
+
+        .visit-hint {
+            font-size: 0.8rem;
+
+            padding:
+                0.5rem 0.9rem;
+        }
+
+    }
+
+
+    /* =========================================================
+       TABLET / LANDSCAPE
+    ========================================================= */
+
+    @media (min-width: 601px) {
+
+        .background-video {
+            object-position: center center;
+        }
+
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
     @media (prefers-reduced-motion: reduce) {
-        .background-video,
+
         .sun-glow,
         .heat,
         .ember {
             animation: none !important;
         }
+
     }
+
 </style>
 ```
 
@@ -243,7 +531,10 @@
 <body>
 
 ```
-<!-- EVERYTHING IS CLICKABLE -->
+<!-- =========================================================
+     CLICK ANYWHERE → PRODIGAL SUN RADIO
+========================================================= -->
+
 <a
     class="promo-link"
     href="https://www.prodigalsunradio.com/"
@@ -254,69 +545,127 @@
 
     <div class="stage">
 
-        <!-- LOOPING VIDEO BACKGROUND -->
+
+        <!-- =================================================
+             BACKGROUND VIDEO
+        ================================================= -->
+
         <video
             class="background-video"
             autoplay
             muted
             loop
             playsinline
+            webkit-playsinline
             preload="auto"
             aria-hidden="true"
         >
-            <source src="background.mp4" type="video/mp4">
+
+            <source
+                src="background.mp4"
+                type="video/mp4"
+            >
+
         </video>
 
-        <!-- VIDEO OVERLAY -->
+
+        <!-- VIDEO DARKENING -->
+
         <div class="video-overlay"></div>
 
-        <!-- ATMOSPHERIC EFFECTS -->
+
+        <!-- GOLDEN ATMOSPHERE -->
+
         <div class="sun-glow"></div>
+
+
+        <!-- HEAT / SHIMMER -->
+
         <div class="heat"></div>
 
+
         <!-- FLOATING EMBERS -->
-        <div class="embers" id="embers"></div>
+
+        <div
+            class="embers"
+            id="embers"
+        ></div>
+
 
     </div>
 
 </a>
 
-<!-- LISTEN PROMPT -->
+
+<!-- =========================================================
+     LISTEN PROMPT
+========================================================= -->
+
 <div class="visit-hint">
     Tap to listen live
 </div>
 
+
+<!-- =========================================================
+     EMBER GENERATOR
+========================================================= -->
+
 <script>
-    const layer = document.getElementById('embers');
+
+    const layer =
+        document.getElementById('embers');
 
     const count = 22;
 
-    for (let i = 0; i < count; i += 1) {
 
-        const spark = document.createElement('span');
+    for (
+        let i = 0;
+        i < count;
+        i += 1
+    ) {
 
-        spark.className = 'ember';
+        const spark =
+            document.createElement('span');
+
+
+        spark.className =
+            'ember';
+
 
         spark.style.left =
             Math.random() * 100 + '%';
+
 
         spark.style.setProperty(
             '--drift',
             (Math.random() * 80 - 40) + 'px'
         );
 
+
         spark.style.animationDuration =
             (7 + Math.random() * 8) + 's';
+
 
         spark.style.animationDelay =
             (-Math.random() * 12) + 's';
 
+
+        const size =
+            2 + Math.random() * 5;
+
+
         spark.style.width =
-            spark.style.height =
-            (2 + Math.random() * 5) + 'px';
+            size + 'px';
+
+
+        spark.style.height =
+            size + 'px';
+
 
         layer.appendChild(spark);
+
     }
+
 </script>
 ```
 
