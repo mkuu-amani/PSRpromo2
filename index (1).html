@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Tune in to Prodigal Sun Radio — independent, community-driven and ad-free. Where The Mix Never Sleeps!!">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://mkuu-amani.github.io/PSRpromo2/">
+    <title>Prodigal Sun Radio — Where The Mix Never Sleeps!!</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Prodigal Sun Radio">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://mkuu-amani.github.io/PSRpromo2/">
+    <meta property="og:title" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+    <meta property="og:description" content="Tune in to Prodigal Sun Radio — independent, community-driven and ad-free. Where The Mix Never Sleeps!!">
+    <meta property="og:image" content="https://mkuu-amani.github.io/PSRpromo2/facebook-card.jpeg">
+    <meta property="og:image:secure_url" content="https://mkuu-amani.github.io/PSRpromo2/facebook-card.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mkuu-amani.github.io/PSRpromo2/">
+    <meta name="twitter:title" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+    <meta name="twitter:description" content="Tune in to Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+    <meta name="twitter:image" content="https://mkuu-amani.github.io/PSRpromo2/x-card.jpeg">
+    <meta name="twitter:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+    <link rel="preload" href="background.mp4" as="video" type="video/mp4">
+
+    <style>
+        :root {
+            --gold: #eccc68;
+            --safe-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+            --safe-top: env(safe-area-inset-top, 0px);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .promo-link {
+            position: fixed;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            background: #000;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .stage {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .background-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            background: #000;
+            pointer-events: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.22) 0%,
+                rgba(0, 0, 0, 0.06) 42%,
+                rgba(0, 0, 0, 0.46) 100%
+            );
+        }
+
+        .sun-glow {
+            position: absolute;
+            left: 50%;
+            top: 48%;
+            width: min(70vw, 56rem);
+            aspect-ratio: 1;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            background: radial-gradient(
+                circle,
+                rgba(236, 204, 104, 0.16) 0%,
+                rgba(236, 204, 104, 0.06) 36%,
+                transparent 70%
+            );
+            animation: glowPulse 6s ease-in-out infinite;
+        }
+
+        .heat {
+            position: absolute;
+            inset: -10%;
+            pointer-events: none;
+            opacity: 0.55;
+            mix-blend-mode: screen;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(255, 214, 120, 0.07),
+                transparent 55%
+            );
+            animation: heatMove 8s ease-in-out infinite;
+        }
+
+        .embers {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -8px;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(236, 204, 104, 0.85);
+            box-shadow:
+                0 0 6px rgba(236, 204, 104, 0.7),
+                0 0 12px rgba(236, 204, 104, 0.3);
+            animation: rise linear infinite;
+        }
+
+        .visit-hint {
+            position: absolute;
+            left: 50%;
+            bottom: var(--safe-bottom);
+            transform: translateX(-50%);
+            z-index: 2;
+            max-width: calc(100% - 2rem);
+            padding: 0.6rem 1.15rem;
+            color: rgba(255, 255, 255, 0.94);
+            font-size: clamp(0.7rem, 2.6vw, 0.95rem);
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.3;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(236, 204, 104, 0.38);
+            border-radius: 999px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+            animation: hintPulse 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.65; transform: translate(-50%, -50%) scale(1); }
+            50%      { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+        }
+
+        @keyframes heatMove {
+            0%, 100% { transform: translate3d(-1%, 0, 0) scale(1); }
+            50%      { transform: translate3d(1%, -1%, 0) scale(1.03); }
+        }
+
+        @keyframes rise {
+            0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+            10%  { opacity: 0.8; }
+            90%  { opacity: 0.45; }
+            100% { transform: translate3d(var(--drift, 24px), -110vh, 0); opacity: 0; }
+        }
+
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.7; }
+            50%      { opacity: 1; }
+        }
+
+        @media (max-width: 900px) {
+            .sun-glow {
+                width: min(100vw, 40rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .background-video {
+                object-fit: cover;
+                object-position: center 40%;
+            }
+
+            .video-overlay {
+                background: linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0.24) 0%,
+                    rgba(0, 0, 0, 0.08) 45%,
+                    rgba(0, 0, 0, 0.52) 100%
+                );
+            }
+
+            .sun-glow {
+                width: 130vw;
+                top: 44%;
+            }
+
+            .visit-hint {
+                letter-spacing: 0.08em;
+                padding: 0.55rem 0.95rem;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 500px) {
+            .visit-hint {
+                bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
+                padding: 0.4rem 0.85rem;
+                font-size: 0.7rem;
+            }
+
+            .background-video {
+                object-position: center center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sun-glow,
+            .heat,
+            .visit-hint,
+            .ember {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a
+        class="promo-link"
+        href="https://www.prodigalsunradio.com/"
+        rel="noopener noreferrer"
+        aria-label="Listen to Prodigal Sun Radio"
+    >
+        <div class="stage">
+            <video
+                class="background-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster="facebook-card.jpeg"
+            >
+                <source src="background.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="sun-glow"></div>
+            <div class="heat"></div>
+            <div class="embers" aria-hidden="true"></div>
+            <div class="visit-hint">Tap to listen live</div>
+        </div>
+    </a>
+
+    <script>
+        (function () {
+            const DEST = 'https://www.prodigalsunradio.com/';
+            const link = document.querySelector('.promo-link');
+            const hint = document.querySelector('.visit-hint');
+            const video = document.querySelector('.background-video');
+            const emberContainer = document.querySelector('.embers');
+            const ua = navigator.userAgent || '';
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
+            const inX = /Twitter|TwitterAndroid/i.test(ua);
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (inX && isMobile) {
+                hint.textContent = 'Tap to listen live';
+            }
+
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.location.assign(DEST);
+            });
+
+            if (video) {
+                video.muted = true;
+                const play = video.play();
+                if (play && typeof play.catch === 'function') {
+                    play.catch(function () {});
+                }
+                if (reduceMotion) {
+                    video.pause();
+                }
+            }
+
+            const emberCount = isMobile ? 12 : 24;
+            if (!reduceMotion && emberContainer) {
+                for (let i = 0; i < emberCount; i += 1) {
+                    const ember = document.createElement('span');
+                    ember.className = 'ember';
+                    ember.style.left = Math.random() * 100 + '%';
+                    ember.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
+                    ember.style.animationDuration = (6 + Math.random() * 8) + 's';
+                    ember.style.animationDelay = (-Math.random() * 8) + 's';
+                    const size = 1.5 + Math.random() * 3;
+                    ember.style.width = size + 'px';
+                    ember.style.height = size + 'px';
+                    emberContainer.appendChild(ember);
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
